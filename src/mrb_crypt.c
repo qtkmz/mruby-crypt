@@ -1,5 +1,10 @@
 #include <string.h>
-#include "openssl/md5.h"
+#if defined(__APPLE__)
+#  define COMMON_DIGEST_FOR_OPENSSL
+#  include <CommonCrypto/CommonDigest.h>
+#else
+#  include "openssl/md5.h"
+#endif
 #include "mruby.h"
 #include "mruby/class.h"
 #include "mruby/string.h"
