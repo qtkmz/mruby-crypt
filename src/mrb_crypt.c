@@ -88,7 +88,7 @@ static mrb_value mrb_crypt_aprmd5_encrypt(mrb_state *mrb, mrb_value self)
     mrb_value arg_key, arg_salt;
     char *key, *salt;
     char *head, *tail;
-    char salt_str[8];
+    char salt_str[8 + 1];
     int salt_len;
     char r[6 + 8 + 1 + 22 + 1] = "$apr1$";
 
